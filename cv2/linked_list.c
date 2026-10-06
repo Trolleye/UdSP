@@ -1,24 +1,3 @@
-vorcak8@frios.fri.uniza.sk's password:
-    ┌──────────────────────────────────────────────────────────────────────┐
-    │                 • MobaXterm Personal Edition v26.5 •                 │
-    │               (SSH client, X server and network tools)               │
-    │                                                                      │
-    │ ⮞ SSH session to vorcak8@frios.fri.uniza.sk                          │
-    │   • Direct SSH      :  ✓                                             │
-    │   • SSH compression :  ✗                                             │
-    │   • SSH-browser     :  ✓                                             │
-    │   • X11-forwarding  :  ✗  (disabled or not supported by server)      │
-    │                                                                      │
-    │ ⮞ For more info, ctrl+click on help or visit our website.            │
-    └──────────────────────────────────────────────────────────────────────┘
-
-Last login: Wed Sep 30 17:10:53 2026 from 10.10.21.64
-[vorcak8@frios ~]$ ls
-linked_list.c  linked_list.h  main.c
-[vorcak8@frios ~]$ nano linked list .c
-[vorcak8@frios ~]$ nano linked_list.c
-[vorcak8@frios ~]$ vim linked_list.
-[vorcak8@frios ~]$ vim linked_list.c
 #include "linked_list.h"
 #include <stdbool.h>
 #include <stddef.h>
@@ -87,32 +66,6 @@ bool linked_list_add(linked_list* list, double value){
         return true;
 
 }
-
-
-
-
-vorcak8@frios.fri.uniza.sk's password:
-    ┌──────────────────────────────────────────────────────────────────────┐
-    │                 • MobaXterm Personal Edition v26.5 •                 │
-    │               (SSH client, X server and network tools)               │
-    │                                                                      │
-    │ ⮞ SSH session to vorcak8@frios.fri.uniza.sk                          │
-    │   • Direct SSH      :  ✓                                             │
-    │   • SSH compression :  ✗                                             │
-    │   • SSH-browser     :  ✓                                             │
-    │   • X11-forwarding  :  ✗  (disabled or not supported by server)      │
-    │                                                                      │
-    │ ⮞ For more info, ctrl+click on help or visit our website.            │
-    └──────────────────────────────────────────────────────────────────────┘
-
-Last login: Wed Sep 30 17:10:53 2026 from 10.10.21.64
-[vorcak8@frios ~]$ ls
-linked_list.c  linked_list.h  main.c
-[vorcak8@frios ~]$ nano linked list .c
-[vorcak8@frios ~]$ nano linked_list.c
-[vorcak8@frios ~]$ vim linked_list.
-[vorcak8@frios ~]$ vim linked_list.c
-
 
 bool linked_list_insert(linked_list* list, size_t index, double value){
         if (!list || list->size_) {
