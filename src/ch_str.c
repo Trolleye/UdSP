@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
 
 size_t ch_str_len(const char *s) {
     const char *p = s;

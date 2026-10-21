@@ -4,7 +4,7 @@
 
 #include <stddef.h>
 
-#include "../ch_err.h"
+#include "../include/ch_err.h"
 
 typedef struct ch_buf {
     unsigned char *data;

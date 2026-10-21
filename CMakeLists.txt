@@ -3,15 +3,15 @@ project(cv4 C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(cv2)
-include_directories(cv4)
 
 add_executable(cv4
-        cv4/src/ch_buf.c
-        cv4/include/ch_buf.h
-        cv4/src/ch_err.c
-        cv4/include/ch_err.h
-        cv4/include/ch_str.h
-        cv4/src/ch_str.c
-        cv4/tests/ch_test.h
-        cv4/tests/test_str.c)
+        src/ch_buf.c
+        include/ch_buf.h
+        src/ch_err.c
+        include/ch_err.h
+        include/ch_str.h
+        src/ch_str.c
+        tests/ch_test.h
+        tests/test_str.c
+        src/ch_list.c
+        include/ch_list.h)
