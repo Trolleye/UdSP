@@ -23,3 +23,9 @@ add_executable(test_buf
         src/ch_buf.c
         src/ch_err.c
 )
+
+add_executable(test_list
+        src/ch_list.c
+        src/ch_err.c
+        tests/test_list.c
+)
