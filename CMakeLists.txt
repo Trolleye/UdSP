@@ -1,17 +1,25 @@
-cmake_minimum_required(VERSION 4.3)
+cmake_minimum_required(VERSION 3.10)
 project(cv4 C)
 
 set(CMAKE_C_STANDARD 11)
 
+include_directories(include)
 
-add_executable(cv4
+add_executable(cv4 main.c
         src/ch_buf.c
-        include/ch_buf.h
         src/ch_err.c
-        include/ch_err.h
-        include/ch_str.h
         src/ch_str.c
-        tests/ch_test.h
-        tests/test_str.c
         src/ch_list.c
-        include/ch_list.h)
+)
+
+add_executable(test_str
+        tests/test_str.c
+        src/ch_str.c
+        src/ch_err.c
+)
+
+add_executable(test_buf
+        tests/test_buf.c
+        src/ch_buf.c
+        src/ch_err.c
+)

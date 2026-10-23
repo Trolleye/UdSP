@@ -184,7 +184,7 @@ bool ch_list_push_front(ch_list* list, void* value) {
 
   }
 
-  bool *ch_list_remove(ch_list *list, ch_list_match match, const void *key) {
+  bool ch_list_remove(ch_list *list, ch_list_match match, const void *key) {
     if (!list || list->size_ == SIZE_MAX) {
       return false;
     }

@@ -11,7 +11,7 @@ static int ch_test_failed = 0;
             printf("ZLYHALO %s:%d: %s\n", __FILE__, __LINE__, #cond); \
             ch_test_failed++;           \
         } else{                         \
-            printf("PRESIEL %s\n", __FILE__, __LINE__, #cond); \
+            printf("PRESIEL %s:%d: %s\n", __FILE__, __LINE__, #cond); \
         }                               \
     } while (0)
 
