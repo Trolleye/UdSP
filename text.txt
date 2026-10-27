@@ -1,0 +1,7 @@
+Hello World!
+ASI
+TTL
+ortogonalna baza
+polynomicka regresia
+poissonove rozdelenie
+jackson network

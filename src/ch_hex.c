@@ -49,7 +49,7 @@ void ch_hexdump_to(FILE* out, const char* label, const void* data, size_t size) 
 
         fprintf(out, " |");
         for (size_t i = 0; i < CH_HEX_COLS && off + i < size; i++) {
-            fputc(isprintable(p[off + i]), out);
+            fputc(is_printable(p[off + i]), out);
         }
         fprintf(out, "\n");
     }
