@@ -2,10 +2,17 @@
 <project version="4">
   <component name="PublishConfigData" serverName="frios" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
+      <paths name="Remote Host (12164a9c-3045-4b3e-aec6-08573b383b00)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="frios">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/vorcak8/udsp" local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
