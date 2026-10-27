@@ -49,7 +49,7 @@ bool ch_list_add_at(ch_list* list, void* value) {
     return false;
   }
 
-  *element = (struct ch_list_element){value, NULL};
+  *element = (struct ch_list_element){.data_ = value, .next_ = NULL};
 
   if (list->tail_) {
     list->tail_->next_ = element;
@@ -76,7 +76,7 @@ bool ch_list_insert_at(ch_list* list, size_t index, void* value) {
     return false;
   }
 
-  *element = (struct ch_list_element){value, NULL};
+  *element = (struct ch_list_element){.data_ = value, .next_ = NULL};
 
   if (index == 0) {
     element->next_ = list->head_;
@@ -143,84 +143,74 @@ void ch_list_for_each(const ch_list* list, ch_list_operation operation, void* in
   for (const struct ch_list_element* element = list->head_; element; element = element->next_) {
     operation(element->data_, inout);
   }
-
+}
 
 bool ch_list_push_front(ch_list* list, void* value) {
-    if (!list || list->size_ == SIZE_MAX) {
-      return NULL;
-    }
-
-    struct ch_list_element* element = malloc(sizeof *element);
-
-    if (!element) {
-      return false;
-    }
-
-    *element = (struct ch_list_element){.data_ = value, .next_ = NULL};
-
-    if (list->head_) {
-      element->next_ = list->head_;
-    } else {
-      list->head_ = element;
-    }
-
-    list->head_ = element;
-    ++list->size_;
-    return true;
-  }
-
-
-  void *ch_list_find(const ch_list *list, ch_list_match match, const void *key) {
-    if (!list || list->size_ == SIZE_MAX) {
-      return NULL;
-    }
-
-    for (struct ch_list_element *element = list->head_; element; element = element->next_) {
-      if (match(element->data_, key)) {
-        return element->data_;
-      }
-    }
-  return NULL;
-
-  }
-
-  bool ch_list_remove(ch_list *list, ch_list_match match, const void *key) {
-    if (!list || list->size_ == SIZE_MAX) {
-      return false;
-    }
-
-    struct ch_list_element* previous = NULL;
-    struct ch_list_element* element = list->head_;
-    while (element) {
-      if (match(element->data_, key)) {
-        if (previous == NULL) {
-          list->head_ = element->next_;
-        } else {
-          previous->next_ = element->next_;
-        }
-
-        if (element == list->tail_) {
-          list->tail_ = previous;
-        }
-
-        free(element);
-        --list->size_;
-        return true;
-      }
-      previous = element;
-      element = element->next_;
-    }
-
+  if (!list || list->size_ == SIZE_MAX) {
     return false;
-
   }
 
-  size_t ch_list_size(const ch_list* list) {
-    if (!list) {
-      return 0;
+  struct ch_list_element* element = malloc(sizeof(*element));
+  if (!element) {
+    return false;
+  }
+
+  *element = (struct ch_list_element){.data_ = value, .next_ = list->head_};
+
+  list->head_ = element;
+  if (!list->tail_) {
+    list->tail_ = element;
+  }
+  ++list->size_;
+  return true;
+}
+
+void* ch_list_find(const ch_list* list, ch_list_match match, const void* key) {
+  if (!list || list->size_ == 0 || !match) {
+    return NULL;
+  }
+
+  for (const struct ch_list_element* element = list->head_; element; element = element->next_) {
+    if (match(element->data_, key)) {
+      return element->data_;
     }
-    return list->size_;
+  }
+  return NULL;
+}
+
+bool ch_list_remove(ch_list* list, ch_list_match match, const void* key) {
+  if (!list || list->size_ == 0 || !match) {
+    return false;
   }
 
+  struct ch_list_element* previous = NULL;
+  struct ch_list_element* element = list->head_;
+  while (element) {
+    if (match(element->data_, key)) {
+      if (previous == NULL) {
+        list->head_ = element->next_;
+      } else {
+        previous->next_ = element->next_;
+      }
 
+      if (element == list->tail_) {
+        list->tail_ = previous;
+      }
+
+      free(element);
+      --list->size_;
+      return true;
+    }
+    previous = element;
+    element = element->next_;
+  }
+
+  return false;
+}
+
+size_t ch_list_size(const ch_list* list) {
+  if (!list) {
+    return 0;
+  }
+  return list->size_;
 }
