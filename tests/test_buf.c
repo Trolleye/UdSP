@@ -1,7 +1,7 @@
 #include <string.h>
 
 #include "ch_buf.h"
-#include "ch_test.h"
+#include "../include/ch_test.h"
 
 int main(void) {
     ch_buf_cleanup(NULL);

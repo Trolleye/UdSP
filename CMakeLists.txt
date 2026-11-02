@@ -30,3 +30,9 @@ add_executable(test_list
         src/ch_err.c
         tests/test_list.c
 )
+
+add_executable(test_bytes
+        src/ch_bytes.c
+        src/ch_err.c
+        tests/test_bytes.c
+)

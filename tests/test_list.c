@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "../include/ch_buf.h"
 #include "../include/ch_list.h"
-#include "ch_test.h"
+#include "../include/ch_test.h"
 
 int main(void) {
     ch_list list;
