@@ -17,5 +17,10 @@ void ch_str_trim(char *s);
 
 size_t ch_str_split(char *s, char **out, size_t max);
 
+size_t ch_utf8_seq_len(unsigned char first);
+
+int ch_utf8_valid(const char* s);
+
+size_t ch_utf8_count(const char* s);
 
 #endif /* CH_STR_H */

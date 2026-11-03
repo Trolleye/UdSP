@@ -8,4 +8,11 @@
 
 int main(void) {
     CH_CHECK(ch_str_len("") == 0);
+    CH_CHECK(ch_str_len("Ahoj") == 4);
+
+    const char* s = "Žilina";
+    CH_CHECK(ch_str_len(s) == 7);
+    CH_CHECK(ch_utf8_count(s) == 6);
+
+    return ch_test_result();
 }
