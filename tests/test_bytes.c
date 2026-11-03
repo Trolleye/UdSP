@@ -1,4 +1,3 @@
-#include <iso646.h>
 #include <stdlib.h>
 #include "ch_bytes.h"
 #include "../include/ch_test.h"
