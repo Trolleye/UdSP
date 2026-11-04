@@ -36,3 +36,8 @@ add_executable(test_bytes
         src/ch_err.c
         tests/test_bytes.c
 )
+
+add_executable(zapocet
+        zapocet1cvicny/main.c
+
+)
