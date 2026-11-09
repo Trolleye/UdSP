@@ -1,0 +1,5 @@
+Žilina 12.5
+Košice 15.0
+Poprad -1.5
+Bratislava 17.0
+Martin 11.0
