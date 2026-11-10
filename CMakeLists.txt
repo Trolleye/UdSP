@@ -37,11 +37,15 @@ add_executable(test_bytes
         tests/test_bytes.c
 )
 
-add_executable(zapocet1
+add_executable(zapocet1cvicny
         zapocet1cvicny/main.c
 
 )
 
-add_executable(zapocet2
+add_executable(zapocet2cvicny
         zapocet2cvicny/main.c
+)
+
+add_executable(zapocet1
+        zapocet1/main.c
 )
