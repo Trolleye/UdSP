@@ -38,14 +38,14 @@ add_executable(test_bytes
 )
 
 add_executable(zapocet1cvicny
-        zapocet1cvicny/main.c
+        side/zapocet1cvicny/main.c
 
 )
 
 add_executable(zapocet2cvicny
-        zapocet2cvicny/main.c
+        side/zapocet2cvicny/main.c
 )
 
 add_executable(zapocet1
-        zapocet1/main.c
+        side/zapocet1/main.c
 )
