@@ -36,16 +36,3 @@ add_executable(test_bytes
         src/ch_err.c
         tests/test_bytes.c
 )
-
-add_executable(zapocet1cvicny
-        side/zapocet1cvicny/main.c
-
-)
-
-add_executable(zapocet2cvicny
-        side/zapocet2cvicny/main.c
-)
-
-add_executable(zapocet1
-        side/zapocet1/main.c
-)

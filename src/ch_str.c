@@ -159,7 +159,7 @@ ch_err ch_b64_decode(const char* restrict text, unsigned char* restrict out, siz
                 if (pad_at < 0) pad_at = k;
             } else {
                 if (pad_at >= 0) return CH_ERR_FORMAT;
-                quad[k] = b64_value(c);
+                quad[k] = ch_b64_value(c);
                 if (quad[k] < 0) return CH_ERR_FORMAT;
             }
         }
@@ -175,4 +175,13 @@ ch_err ch_b64_decode(const char* restrict text, unsigned char* restrict out, siz
 
     *out_len = o;
     return CH_OK;
+}
+
+int ch_b64_value(char c) {
+    if (c >= 'A' && c <= 'Z') return c - 'A';
+    if (c >= 'a' && c <= 'z') return c - 'a' + 26;
+    if (c >= '0' && c <= '9') return c - '0' + 52;
+    if (c == '+') return 62;
+    if (c == '/') return 63;
+    return -1;
 }
