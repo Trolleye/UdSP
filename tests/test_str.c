@@ -8,6 +8,12 @@ int main(void) {
     CH_CHECK(ch_b64_encoded_len(3) == 4);
     CH_CHECK(ch_b64_encoded_len(6) == 8);
 
+    CH_CHECK(ch_b64_value('A') == 0);
+    CH_CHECK(ch_b64_value('z') == 51);
+    CH_CHECK(ch_b64_value('9') == 61);
+    CH_CHECK(ch_b64_value('+') == 62);
+    CH_CHECK(ch_b64_value('/') == 63);
+
     char* c = "aA+";
     char encoded[8];
     CH_CHECK(ch_b64_encode(c, 3, encoded, sizeof(encoded)) == CH_OK);
